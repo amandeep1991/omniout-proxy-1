@@ -4,7 +4,11 @@ import connect from 'connect';
 import bodyParser from 'body-parser';
 import { runAuthenticate, getAuthenticationDetails } from "./authenticate.js";
 
+console.log('####################1');
+
 const proxy = httpProxy.createProxyServer({});
+
+console.log('####################2');
 
 /************** START: EDIT THIS *******************/
 const namespace = process.env.NAMESPACE;
@@ -53,7 +57,13 @@ app.use(function(req, res) {
     proxy.web(req, res, { target: getRequestURL(req), secure: false, changeOrigin: true });
 });
 
+
+console.log('####################3');
+
 const server = http.createServer(app);
+
+console.log('####################4');
+
 
 const getRequestURL = function(req) {
     return getAuthenticationDetails()["instanceUrl"] + req.headers[endpointHeader].replace(placeholderNamespace, namespace).split(placeholderUrl)[1]
@@ -78,3 +88,5 @@ export function startProxy() {
     runAuthenticate();
     server.listen(proxyPort);
 }
+
+console.log('####################5');
