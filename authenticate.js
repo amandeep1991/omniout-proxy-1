@@ -8,14 +8,14 @@ const authenticationInterval = process.env.AUTH_INTERVAL;
 const authenticationClientId = process.env.AUTH_CLIENT_ID;
 const authenticationClientSecret = process.env.AUTH_CLIENT_SECRET;
 /************** END: EDIT THIS *******************/
-
+console.log('####################1.1');
 let instanceUrl = '';
 let accessToken = '';
 let authenticated = false;
 
 /************** DO NOT USE IN PRODUCTION *************/
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
-
+console.log('####################1.2');
 async function authenticate() {
     try {
         authenticated = false;
@@ -37,7 +37,7 @@ async function authenticate() {
         console.log(err);
     }
 }
-
+console.log('####################1.3');
 export function runAuthenticate() {
     authenticate().then((result) => {
         if (result) {
@@ -49,7 +49,7 @@ export function runAuthenticate() {
         }
     });
 }
-
+console.log('####################1.4');
 export function getAuthenticationDetails() {
     return {
         instanceUrl,
@@ -57,3 +57,4 @@ export function getAuthenticationDetails() {
         authenticated
     }
 }
+console.log('####################1.5');
