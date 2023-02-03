@@ -5,6 +5,7 @@ import bodyParser from 'body-parser';
 import { runAuthenticate, getAuthenticationDetails } from "./authenticate.js";
 
 console.log('####################1');
+process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 1;
 
 const proxy = httpProxy.createProxyServer({});
 
