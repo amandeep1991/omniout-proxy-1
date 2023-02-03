@@ -1,5 +1,5 @@
 {
-  "name": "oo-proxy",
+  "name": "omniout-proxy-1",
   "version": "1.0.0",
   "description": "Reference proxy for OmniOut",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://git.heroku.com/oo-proxy.git"
+    "url": "https://git.heroku.com/omniout-proxy-1.git"
   },
   "keywords": [
     "Member",
