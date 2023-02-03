@@ -1,1 +1,2 @@
-# omniout-proxy-1
+# oo-proxy
+Omniout Proxy
