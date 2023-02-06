@@ -66,7 +66,7 @@ console.log('####################4');
 
 
 const getRequestURL = function(req) {
-    return "https://wdemo.test1.lightning.pc-rnd.force.com/services/apexrest/services/apexrest/devopsimpkg11/v1/GenericInvoke";
+    return "https://wdemo.test1.my.pc-rnd.salesforce.com/services/apexrest/services/apexrest/devopsimpkg11/v1/GenericInvoke";
     
     /**
     console.log("getAuthenticationDetails: "  + getAuthenticationDetails());
