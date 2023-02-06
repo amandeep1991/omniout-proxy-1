@@ -76,8 +76,8 @@ const getRequestURL = function(req) {
     console.log("placeholderUrl: "  + placeholderUrl);
     //console.log("req.headers[endpointHeader].replace(placeholderNamespace, namespace).split(placeholderUrl)[1]: "  + req.headers[endpointHeader].replace(placeholderNamespace, namespace).split(placeholderUrl)[1]);
 
-    //return getAuthenticationDetails()["instanceUrl"] + req.headers[endpointHeader].replace(placeholderNamespace, namespace).split(placeholderUrl)[1]
-    return getAuthenticationDetails()["instanceUrl"] + endpointHeader.replace(placeholderNamespace, namespace).split(placeholderUrl)[1]
+    return getAuthenticationDetails()["instanceUrl"] + req.headers['salesforceproxy-endpoint'].replace(placeholderNamespace, namespace).split(placeholderUrl)[1]
+    //return getAuthenticationDetails()["instanceUrl"] + endpointHeader.replace(placeholderNamespace, namespace).split(placeholderUrl)[1]
 }
 
 const enableCors = function(req, res) {
