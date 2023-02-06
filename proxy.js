@@ -66,7 +66,10 @@ console.log('####################4');
 
 
 const getRequestURL = function(req) {
+    return "https://wdemo.test1.lightning.pc-rnd.force.com/services/apexrest/services/apexrest/devopsimpkg11/v1/GenericInvoke";
+    /**
     console.log("getAuthenticationDetails: "  + getAuthenticationDetails());
+    console.log("getAuthenticationDetails entries: "  + Object.entries(getAuthenticationDetails()));
     console.log("req.headers: "  + Object.entries(req.headers));
     console.log("endpointHeader: "  + endpointHeader);
     console.log("req.headers[endpointHeader]: "  + req.headers[endpointHeader]);
@@ -74,10 +77,13 @@ const getRequestURL = function(req) {
     console.log("namespace: "  + namespace);
     //console.log("req.headers[endpointHeader].replace(placeholderNamespace, namespace): "  + req.headers[endpointHeader].replace(placeholderNamespace, namespace));
     console.log("placeholderUrl: "  + placeholderUrl);
+    console.log("req.headers['salesforceproxy-endpoint']::: " + req.headers['salesforceproxy-endpoint']);
+    
     //console.log("req.headers[endpointHeader].replace(placeholderNamespace, namespace).split(placeholderUrl)[1]: "  + req.headers[endpointHeader].replace(placeholderNamespace, namespace).split(placeholderUrl)[1]);
 
     return getAuthenticationDetails()["instanceUrl"] + req.headers['salesforceproxy-endpoint'].replace(placeholderNamespace, namespace).split(placeholderUrl)[1]
     //return getAuthenticationDetails()["instanceUrl"] + endpointHeader.replace(placeholderNamespace, namespace).split(placeholderUrl)[1]
+    **/
 }
 
 const enableCors = function(req, res) {
