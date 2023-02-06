@@ -19,6 +19,8 @@ console.log('####################1.2');
 async function authenticate() {
     try {
         authenticated = false;
+        console.log('authenticationUrl:: ' + authenticationUrl);
+        console.log('bodyStuff:: ' + `username=${authenticationUsername}&password=${authenticationPassword}&client_id=${authenticationClientId}&client_secret=${authenticationClientSecret}&grant_type=password`);        
         const response = await fetch(authenticationUrl, {
             method: 'POST',
             headers: {
