@@ -5,7 +5,6 @@ import bodyParser from 'body-parser';
 import { runAuthenticate, getAuthenticationDetails } from "./authenticate.js";
 
 console.log('####################1');
-process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 1;
 
 const proxy = httpProxy.createProxyServer({});
 
@@ -67,6 +66,14 @@ console.log('####################4');
 
 
 const getRequestURL = function(req) {
+    console.log("getAuthenticationDetails: "  + getAuthenticationDetails());
+    console.log("req.headers[endpointHeader]: "  + req.headers[endpointHeader]);
+    console.log("placeholderNamespace: "  + placeholderNamespace);
+    console.log("namespace: "  + namespace);
+    console.log("req.headers[endpointHeader].replace(placeholderNamespace, namespace): "  + req.headers[endpointHeader].replace(placeholderNamespace, namespace));
+    console.log("placeholderUrl: "  + placeholderUrl);
+    console.log("req.headers[endpointHeader].replace(placeholderNamespace, namespace).split(placeholderUrl)[1]: "  + req.headers[endpointHeader].replace(placeholderNamespace, namespace).split(placeholderUrl)[1]);
+
     return getAuthenticationDetails()["instanceUrl"] + req.headers[endpointHeader].replace(placeholderNamespace, namespace).split(placeholderUrl)[1]
 }
 
