@@ -67,16 +67,17 @@ console.log('####################4');
 
 const getRequestURL = function(req) {
     console.log("getAuthenticationDetails: "  + getAuthenticationDetails());
-    console.log("req.headers: "  + req.headers);
+    console.log("req.headers: "  + Object.entries(req.headers));
     console.log("endpointHeader: "  + endpointHeader);
     console.log("req.headers[endpointHeader]: "  + req.headers[endpointHeader]);
     console.log("placeholderNamespace: "  + placeholderNamespace);
     console.log("namespace: "  + namespace);
-    console.log("req.headers[endpointHeader].replace(placeholderNamespace, namespace): "  + req.headers[endpointHeader].replace(placeholderNamespace, namespace));
+    //console.log("req.headers[endpointHeader].replace(placeholderNamespace, namespace): "  + req.headers[endpointHeader].replace(placeholderNamespace, namespace));
     console.log("placeholderUrl: "  + placeholderUrl);
-    console.log("req.headers[endpointHeader].replace(placeholderNamespace, namespace).split(placeholderUrl)[1]: "  + req.headers[endpointHeader].replace(placeholderNamespace, namespace).split(placeholderUrl)[1]);
+    //console.log("req.headers[endpointHeader].replace(placeholderNamespace, namespace).split(placeholderUrl)[1]: "  + req.headers[endpointHeader].replace(placeholderNamespace, namespace).split(placeholderUrl)[1]);
 
-    return getAuthenticationDetails()["instanceUrl"] + req.headers[endpointHeader].replace(placeholderNamespace, namespace).split(placeholderUrl)[1]
+    //return getAuthenticationDetails()["instanceUrl"] + req.headers[endpointHeader].replace(placeholderNamespace, namespace).split(placeholderUrl)[1]
+    return getAuthenticationDetails()["instanceUrl"] + endpointHeader.replace(placeholderNamespace, namespace).split(placeholderUrl)[1]
 }
 
 const enableCors = function(req, res) {
