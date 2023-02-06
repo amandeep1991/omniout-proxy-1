@@ -67,6 +67,8 @@ console.log('####################4');
 
 const getRequestURL = function(req) {
     console.log("getAuthenticationDetails: "  + getAuthenticationDetails());
+    console.log("req.headers: "  + req.headers);
+    console.log("endpointHeader: "  + endpointHeader);
     console.log("req.headers[endpointHeader]: "  + req.headers[endpointHeader]);
     console.log("placeholderNamespace: "  + placeholderNamespace);
     console.log("namespace: "  + namespace);
